@@ -1,12 +1,7 @@
-function loss = MSE(train, val)
+function loss = MSE(train, val, N)
 
-    if(length(train) - length(val))
-     fprintf("Input Error");
-    end
-    
-    N = length(train);
     loss_square = (train - val).^2;
-    loss = sum(loss_square) / (2 * N);
+    loss = sum(loss_square, 2) / (2 * N);
    
    end
 
